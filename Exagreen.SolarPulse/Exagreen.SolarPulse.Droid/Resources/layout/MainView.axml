@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#2a2a2a">
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00B6AD">
+            <ImageView
+                android:src="@drawable/Icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2" />
+            <TextView
+                android:text="Solar Pulse"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:gravity="center_vertical" />
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        local:MvxBind="Text LiveProduction[0]"
+        android:layout_marginTop="15dip" />
+    <TextView
+        android:text="watts"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/textView4" />
+    <Exagreen.SolarPulse.Droid.Controls.SolarBarChartView
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        min_value="0"
+        max_value="1000"
+        bar_width="200"
+        bar_offset="2"
+        bar_color="#00b1e1"
+        bar_caption_fontSize="30"
+        bar_caption_innerColor="#000000"
+        bar_caption_outerColor="#FFFFFF"
+        local:MvxBind="RefreshableItemsSource Bar(LiveProduction)" />
+<!---->
+</LinearLayout>
